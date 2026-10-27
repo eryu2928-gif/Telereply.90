@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { TelegramMtprotoManager } from './telegram/mtproto';
-import { BusinessAgentEngine } from './ai/gemini';
+import { TelegramMtprotoManager } from './mtproto';
+import { BusinessAgentEngine } from './gemini';
 import { PersonalRule, Product, FaqItem, BusinessProfile, AutomationLog } from './types';
 
 dotenv.config();
