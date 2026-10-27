@@ -1,7 +1,7 @@
 import { TelegramClient } from 'telegram';
 import { StringSession } from 'telegram/sessions';
 import { NewMessage, NewMessageEvent } from 'telegram/events';
-import { TelegramAuthState } from '../types';
+import { TelegramAuthState } from './types';
 
 export class TelegramMtprotoManager {
   private client: TelegramClient | null = null;
