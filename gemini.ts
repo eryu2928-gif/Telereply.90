@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { Product, BusinessProfile, FaqItem } from '../types';
+import { Product, BusinessProfile, FaqItem } from './types'; // './types' বা সঠিক পাথ দিন
 
 export class BusinessAgentEngine {
   private ai: GoogleGenerativeAI | null = null;
@@ -113,7 +113,7 @@ export class BusinessAgentEngine {
 
       if (filtered.length > 0) {
         const shoe = filtered[0];
-        const text = `জী, আপনার চাহিদামতো ২০০০ টাকার মধ্যে ৪২ সাইজের কালো জুতা পাওয়া যাচ্ছে:\n\n👞 ${shoe.title}\n💰 মূল্য: ${shoe.currency}${shoe.currentPrice} (ডিসকাউন্ট: ${shoe.currency}${shoe.discountAmount})\n🎨 কালার: ${shoe.colors.join(', ')}\n📏 সাইজ: ${shoe.sizes.join(', ')}\n📦 স্টক: ${shoe.stockQuantity} জোড়া উপলব্ধ।\n\nডেলিভারি: ঢাকার ভেতরে ২৪-৪৮ ঘণ্টার মধ্যে পৌঁছে যাবে।`;
+        const text = `জী, আপনার চাহিدامতো ২০০০ টাকার মধ্যে ৪২ সাইজের কালো জুতা পাওয়া যাচ্ছে:\n\n👞 ${shoe.title}\n💰 মূল্য: ${shoe.currency}${shoe.currentPrice} (ডিসকাউন্ট: ${shoe.currency}${shoe.discountAmount})\n🎨 কালার: ${shoe.colors.join(', ')}\n📏 সাইজ: ${shoe.sizes.join(', ')}\n📦 স্টক: ${shoe.stockQuantity} জোড়া উপলব্ধ।\n\nডেলিভারি: ঢাকার ভেতরে ২৪-৪৮ ঘণ্টার মধ্যে পৌঁছে যাবে।`;
         return {
           replyText: text,
           imageUrls: shoe.imageUrls,
